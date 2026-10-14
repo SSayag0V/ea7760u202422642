@@ -1,4 +1,5 @@
-import {BaseResource, BaseResponse} from '../../shared/infrastructure/base-response';
+import {BaseResourceStringId, BaseResponseStringId} from './base-response-special';
+import {BaseResource, BaseResponse} from './base-response';
 
 export interface ChargingStationResource {
   id: string;
@@ -11,7 +12,7 @@ export interface ChargingStationResource {
 }
 
 
-export interface ChargingStationsResponse extends BaseResponse {
+export interface ChargingStationsResponse extends BaseResponseStringId {
   chargingStations: ChargingStationResource[];
 }
 
