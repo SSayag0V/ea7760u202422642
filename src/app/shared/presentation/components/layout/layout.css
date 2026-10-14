@@ -1,0 +1,10 @@
+:host { display: block; min-height: 100vh; }
+.layout-shell { min-height: 100vh; display: flex; flex-direction: column; }
+mat-toolbar { background: #718391; color: #fff; }
+mat-toolbar-row { gap: 16px; }
+.brand-title { font-size: 1.25rem; font-weight: 500; white-space: nowrap; }
+.mat-spacer { flex: 1 1 auto; }
+.main-navigation { display: flex; align-items: center; gap: 4px; }
+a.active { text-decoration: underline; text-underline-offset: 5px; }
+.layout-main { flex: 1 0 auto; width: 100%; box-sizing: border-box; }
+@media (max-width: 760px) { mat-toolbar-row { min-height: 64px; height: auto; flex-wrap: wrap; padding: 8px 12px; } .brand-title { width: 100%; } .main-navigation { flex-wrap: wrap; } .mat-spacer { display: none; } }

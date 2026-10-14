@@ -1,0 +1,32 @@
+<section class="page-container" aria-labelledby="page-title">
+  <div class="page-heading">
+    <h1 id="page-title">{{ 'vehicle-charge.list-title' | translate }}</h1>
+    @if (showAdd) {
+    <button mat-raised-button color="primary" type="button" class="add-new-button" (click)="navigateToNew()">
+      <mat-icon>add</mat-icon>
+      {{ 'vehicle-charge.add-new' | translate }}
+    </button>
+    }
+  </div>
+
+  @if (store.error()) {
+    <p class="error-message" role="alert">{{ store.error() }}</p>
+  }
+  @if (store.loading()) {
+    <div class="loading-state" role="status" aria-live="polite">
+      <mat-spinner diameter="40" />
+    </div>
+  }
+  @if (!store.loading() && visibleItems().length === 0) {
+    <p class="empty-state">{{ 'vehicle-charge.empty' | translate }}</p>
+  }
+  @if (!store.loading() && visibleItems().length > 0) {
+    <div class="cards-grid" role="list" aria-label="vehicle-charges">
+      @for (item of visibleItems(); track item.id) {
+        <div role="listitem">
+          <app-vehicle-charge-card [item]="item" [showEdit]="showEdit" [showDelete]="showDelete" (edit)="editItem($event)" (remove)="deleteItem($event)" />
+        </div>
+      }
+    </div>
+  }
+</section>

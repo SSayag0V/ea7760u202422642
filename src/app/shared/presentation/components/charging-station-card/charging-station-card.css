@@ -1,0 +1,7 @@
+mat-card { height: 100%; box-sizing: border-box; border-radius: 14px; }
+mat-card-content { padding-top: 12px; }
+mat-card-content p { margin: 8px 0; overflow-wrap: anywhere; }
+mat-card-actions { border-top: 1px solid #e4e7eb; gap: 6px; padding: 10px 16px; flex-wrap: wrap; }
+mat-card-actions button { border-radius: 8px; }
+mat-card-actions mat-icon { margin-right: 4px; }
+.card-action-delete { --mdc-text-button-label-text-color: #b3261e; }

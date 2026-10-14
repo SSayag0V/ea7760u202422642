@@ -1,0 +1,27 @@
+<mat-card class="entity-card" aria-label="ChargingStation card">
+  <mat-card-header>
+    <mat-card-title>{{ item.stationName }}</mat-card-title>
+    <mat-card-subtitle>#{{ item.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>{{ 'charging-station.vehicleType' | translate }}</strong>: {{ item.vehicleType }}</p>
+      <p><strong>{{ 'charging-station.maxGridKwCapacity' | translate }}</strong>: {{ item.maxGridKwCapacity }}</p>
+      <p><strong>{{ 'charging-station.stallsAvailable' | translate }}</strong>: {{ item.stallsAvailable }}</p>
+      <p><strong>{{ 'charging-station.isActive' | translate }}</strong>: {{ item.isActive }}</p>
+      <p><strong>{{ 'charging-station.locationCoordinates' | translate }}</strong>: {{ item.locationCoordinates }}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    @if (showEdit) {
+    <button mat-button type="button" class="card-action-edit" (click)="edit.emit(item.id)" [attr.aria-label]="('charging-station.edit' | translate) + ' ' + item.stationName">
+      <mat-icon>edit</mat-icon>
+      <span>{{ 'charging-station.edit' | translate }}</span>
+    </button>
+    }
+    @if (showDelete) {
+    <button mat-button type="button" color="warn" class="card-action-delete" (click)="remove.emit(item.id)" [attr.aria-label]="('charging-station.delete' | translate) + ' ' + item.stationName">
+      <mat-icon>delete</mat-icon>
+      <span>{{ 'charging-station.delete' | translate }}</span>
+    </button>
+    }
+  </mat-card-actions>
+</mat-card>

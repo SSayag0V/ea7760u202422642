@@ -1,0 +1,33 @@
+<section class="page-container" aria-labelledby="external-page-title">
+  <div class="page-heading">
+    <h1 id="external-page-title">{{ 'external-api.games-service.search-games.title' | translate }}</h1>
+  </div>
+  @if (loading()) {
+    <div class="loading-state" role="status" aria-live="polite">
+      <mat-spinner diameter="40" />
+      <span>{{ 'common.loading' | translate }}</span>
+    </div>
+  }
+  @if (error()) {
+    <p class="error-message" role="alert">{{ 'external-api.games-service.search-games.loading-error' | translate }}</p>
+  }
+  @if (!loading() && !error() && items().length === 0) {
+    <p class="empty-state">{{ 'external-api.games-service.search-games.empty' | translate }}</p>
+  }
+  @if (!loading() && !error() && items().length > 0) {
+    <div class="cards-grid" role="list">
+      @for (item of items(); track item.id ?? $index) {
+        <mat-card role="listitem" class="external-card">
+          <mat-card-header>
+            <mat-card-title>{{ valueOf(item, primaryField) }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            @for (field of displayFields; track field.path) {
+              <p><strong>{{ field.labelKey | translate }}</strong>: {{ valueOf(item, field.path) }}</p>
+            }
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+</section>

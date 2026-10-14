@@ -1,0 +1,67 @@
+<h1 class="title">{{ (isEdit ? 'vehicle-charge.edit-title' : 'vehicle-charge.new-title') | translate }}</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
+      <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.stationId' | translate }}</mat-label>
+        <input matInput type="text" formControlName="stationId" required />
+        @if (form.get('stationId')!.touched && form.get('stationId')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.vehicleType' | translate }}</mat-label>
+        <input matInput type="text" formControlName="vehicleType" required />
+        @if (form.get('vehicleType')!.touched && form.get('vehicleType')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.makeId' | translate }}</mat-label>
+        <input matInput type="number" formControlName="makeId" required />
+        @if (form.get('makeId')!.touched && form.get('makeId')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.makeName' | translate }}</mat-label>
+        <input matInput type="text" formControlName="makeName" required />
+        @if (form.get('makeName')!.touched && form.get('makeName')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.kwDemand' | translate }}</mat-label>
+        <input matInput type="number" formControlName="kwDemand" required />
+        @if (form.get('kwDemand')!.touched && form.get('kwDemand')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.chargingPortType' | translate }}</mat-label>
+        <input matInput type="text" formControlName="chargingPortType" required />
+        @if (form.get('chargingPortType')!.touched && form.get('chargingPortType')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'vehicle-charge.isFastCharge' | translate }}</mat-label>
+        <input matInput type="text" formControlName="isFastCharge" required />
+        @if (form.get('isFastCharge')!.touched && form.get('isFastCharge')!.hasError('required')) {
+          <mat-error>{{ 'vehicle-charge.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          {{ (isEdit ? 'vehicle-charge.update' : 'vehicle-charge.create') | translate }}
+        </button>
+        <button mat-button type="button" (click)="cancel()">
+          {{ 'vehicle-charge.cancel' | translate }}
+        </button>
+      </div>
+    </form>
+    

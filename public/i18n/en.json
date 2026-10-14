@@ -1,0 +1,100 @@
+{
+  "option": {
+    "home": "Home",
+    "charging-stations": "Charging Stations",
+    "search-games": "Search Games"
+  },
+  "home": {
+    "title": "Home",
+    "content": "Welcome to ea7760u202422642."
+  },
+  "about": {
+    "title": "About",
+    "content": "Application and author information for ea7760u202422642.",
+    "nrc": "NRC",
+    "code": "Code",
+    "author": "Author"
+  },
+  "common": {
+    "confirm-delete": "Are you sure you want to delete this item?",
+    "loading": "Loading\u2026",
+    "external-error": "Could not load data from the external API."
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "content": "The path <strong>{{ invalid_path }}</strong> is not valid.",
+    "go-home": "Go Home"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "powered-by": "Powered by",
+    "and": "and"
+  },
+  "charging-station": {
+    "list-title": "ChargingStation",
+    "new-title": "New ChargingStation",
+    "edit-title": "Edit ChargingStation",
+    "create": "Create",
+    "update": "Update",
+    "cancel": "Cancel",
+    "new": "New",
+    "add-new": "Add New ChargingStation",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "empty": "Empty",
+    "id": "ID",
+    "stationName": "Station Name",
+    "vehicleType": "Vehicle Type",
+    "maxGridKwCapacity": "Max Grid Kw Capacity",
+    "stallsAvailable": "Stalls Available",
+    "isActive": "Is Active",
+    "locationCoordinates": "Location Coordinates",
+    "error": {
+      "required": "ChargingStation is required",
+      "range": "Value is outside the allowed range"
+    }
+  },
+  "vehicle-charge": {
+    "list-title": "VehicleCharge",
+    "new-title": "New VehicleCharge",
+    "edit-title": "Edit VehicleCharge",
+    "create": "Create",
+    "update": "Update",
+    "cancel": "Cancel",
+    "new": "New",
+    "add-new": "Add New VehicleCharge",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "empty": "Empty",
+    "id": "ID",
+    "stationId": "Station Id",
+    "vehicleType": "Vehicle Type",
+    "makeId": "Make Id",
+    "makeName": "Make Name",
+    "kwDemand": "Kw Demand",
+    "chargingPortType": "Charging Port Type",
+    "isFastCharge": "Is Fast Charge",
+    "registeredAt": "Registered At",
+    "error": {
+      "required": "VehicleCharge is required",
+      "range": "Value is outside the allowed range"
+    }
+  },
+  "external-api": {
+    "games-service": {
+      "search-games": {
+        "title": "Search Games",
+        "empty": "No records found.",
+        "loading-error": "Could not load data from the external API.",
+        "fields": {
+          "count": "Count",
+          "message": "Message",
+          "search-criteria": "Search Criteria",
+          "results": "Results"
+        }
+      }
+    }
+  }
+}

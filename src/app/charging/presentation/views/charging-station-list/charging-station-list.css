@@ -1,0 +1,11 @@
+.page-container { padding: 24px; max-width: 1400px; margin: 0 auto; }
+.page-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.page-heading h1 { margin: 0; }
+.add-new-button { min-height: 44px; padding-inline: 18px; border-radius: 10px; font-weight: 600; }
+.page-heading button mat-icon { margin-right: 6px; }
+.cards-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+.cards-grid > div { min-width: 0; }
+.empty-state { padding: 32px 16px; text-align: center; color: #5f6b75; }
+.loading-state { display: flex; justify-content: center; padding: 32px; }
+.error-message { color: #b3261e; padding: 12px 16px; background: #fceeee; border-radius: 8px; }
+@media (max-width: 760px) { .page-container { padding: 16px; } .cards-grid { grid-template-columns: 1fr; } .page-heading { align-items: flex-start; flex-direction: column; } }
