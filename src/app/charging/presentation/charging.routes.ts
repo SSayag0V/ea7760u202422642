@@ -2,7 +2,7 @@ import {Routes} from '@angular/router';
 
 const chargingStationsViewRoute = () => import('./views/charging-stations-view/charging-stations-view').then(m => m.ChargingStationsView);
 const vehicleChargeList = () => import('./views/vehicle-charge-list/vehicle-charge-list').then(m => m.VehicleChargeList);
-const vehicleChargingForm = () => import('./views/vehicle-charging-form/vehicle-charging-form').then(m => m.VehicleChargingForm);
+const vehicleChargingForm = () => import('./views/vehicle-charge-form/vehicle-charge-form').then(m => m.VehicleChargeForm);
 const vehicleChargeForm = () => import('./views/vehicle-charge-form/vehicle-charge-form').then(m => m.VehicleChargeForm);
 
 /**

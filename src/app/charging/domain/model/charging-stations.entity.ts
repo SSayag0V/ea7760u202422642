@@ -1,6 +1,7 @@
 import {Coordinates} from './coordinates';
 
 export class ChargingStations {
+  //needs to find a way to rescue STN-001 and convert into a number for the id
   #id: string;
   #stationName: string;
   #vehicleType: string;
@@ -8,6 +9,7 @@ export class ChargingStations {
   #stallsAvailable: number;
   #isActive: boolean;
   locationCoordinates: Coordinates;
+
 
   constructor() {
     this.#id = '';
