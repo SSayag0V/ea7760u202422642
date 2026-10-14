@@ -5,9 +5,7 @@ import {BaseEntity} from './base-entity';
 import {BaseResource, BaseResponse} from './base-response';
 import {BaseAssembler} from './base-assembler';
 
-/**
- * Provides generic CRUD operations for a single REST endpoint.
- */
+
 export abstract class BaseApiEndpoint<
   TEntity   extends BaseEntity,
   TResource extends BaseResource,
@@ -33,7 +31,7 @@ export abstract class BaseApiEndpoint<
   }
 
   getById(id: number): Observable<TEntity> {
-    return this.http.get<TResource>(`${this.endpointUrl}/${id}`).pipe(
+    return this.http.get<TResource>(`${this.endpointUrl}/STN-${id}`).pipe(
       map(r => this.assembler.toEntityFromResource(r)),
       catchError(this.handleError('Failed to fetch entity'))
     );
@@ -61,6 +59,11 @@ export abstract class BaseApiEndpoint<
   }
 
   delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.endpointUrl}/${id}`).pipe(
+      catchError(this.handleError('Failed to delete entity'))
+    );
+  }
+  deleteIdString(id: string): Observable<void> {
     return this.http.delete<void>(`${this.endpointUrl}/${id}`).pipe(
       catchError(this.handleError('Failed to delete entity'))
     );
