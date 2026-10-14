@@ -2,6 +2,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {BaseEntity} from './base-entity';
+import {BaseEntityStringId} from './base-entity-special';
 import {BaseResource, BaseResponse} from './base-response';
 import {BaseAssembler} from './base-assembler';
 
@@ -36,6 +37,12 @@ export abstract class BaseApiEndpoint<
       catchError(this.handleError('Failed to fetch entity'))
     );
   }
+  getByStringId(id: string): Observable<TEntity> {
+    return this.http.get<TResource>(`${this.endpointUrl}/${id}`).pipe(
+      map(r => this.assembler.toEntityFromResource(r)),
+      catchError(this.handleError('Failed to fetch entity'))
+    );
+  }
 
   create(entity: TEntity): Observable<TEntity> {
     const resource = this.assembler.toResourceFromEntity(entity);
@@ -50,6 +57,14 @@ export abstract class BaseApiEndpoint<
   }
 
   update(entity: TEntity, id: number): Observable<TEntity> {
+    return this.http.put<TResource>(
+      `${this.endpointUrl}/${id}`, this.assembler.toResourceFromEntity(entity)
+    ).pipe(
+      map(r => this.assembler.toEntityFromResource(r)),
+      catchError(this.handleError('Failed to update entity'))
+    );
+  }
+  updateStringId(entity: TEntity, id: string): Observable<TEntity> {
     return this.http.put<TResource>(
       `${this.endpointUrl}/${id}`, this.assembler.toResourceFromEntity(entity)
     ).pipe(
