@@ -1,0 +1,9 @@
+.container-with-spacing { padding: 24px; max-width: 900px; margin: 0 auto; }
+.about-description { color: #53616b; margin-bottom: 20px; }
+.about-card { border-radius: 14px; }
+.about-details { margin: 0; }
+.about-details div { display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 4px; border-bottom: 1px solid #e4e7eb; }
+.about-details div:last-child { border-bottom: 0; }
+.about-details dt { color: #586673; font-weight: 600; }
+.about-details dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) { .about-details div { grid-template-columns: 1fr; gap: 4px; } }

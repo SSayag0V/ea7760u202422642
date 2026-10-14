@@ -1,0 +1,13 @@
+<section class="container-with-spacing" aria-labelledby="about-title">
+  <h1 id="about-title">{{ 'about.title' | translate }}</h1>
+  <p class="about-description">{{ 'about.content' | translate }}</p>
+  <mat-card class="about-card">
+    <mat-card-content>
+      <dl class="about-details">
+        <div><dt>{{ 'about.nrc' | translate }}</dt><dd>{{ nrc }}</dd></div>
+        <div><dt>{{ 'about.code' | translate }}</dt><dd>{{ code }}</dd></div>
+        <div><dt>{{ 'about.author' | translate }}</dt><dd>{{ author }}</dd></div>
+      </dl>
+    </mat-card-content>
+  </mat-card>
+</section>
