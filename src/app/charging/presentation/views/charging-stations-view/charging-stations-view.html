@@ -1,0 +1,25 @@
+<section class="page-container" aria-labelledby="page-title">
+  <header class="page-heading"><h1 id="page-title">{{ pageTitle() }}</h1>@if (descriptionText()) { <p class="page-description">{{ descriptionText() }}</p> }</header>
+
+  @if (items().length === 0) { <p class="empty-state">{{ emptyText() }}</p> }
+  @if (items().length > 0) {
+    <div class="cards-grid" role="list" [style.--card-columns]="columns">
+      @for (item of items(); track valueOf(item, 'id') ?? $index) {
+        <mat-card role="listitem" class="summary-card">
+          @if (cardDefinition.header?.type === 'image') { <img mat-card-image [src]="valueOf(item, cardDefinition.header.field)" [alt]="valueOf(item, cardDefinition.header.alt_field || cardDefinition.title.field) || ''" /> }
+          <mat-card-header><mat-card-title>{{ valueOf(item, cardDefinition.title.field) }}</mat-card-title></mat-card-header>
+          <mat-card-content>
+            @if (cardDefinition.subtitle?.type === 'metrics') { <div class="metrics">@for (metricDef of metricDefinitions; track metricDef.key) { <span><strong>{{ metric(item, metricDef) }}</strong> {{ labelOf(metricDef) }}</span> }</div> }
+            @if (contentDefinition.type === 'related-list') {
+              @if (relatedRows(item, contentDefinition).length === 0) { <p class="empty-related">{{ languageIsSpanish ? contentDefinition.empty_es : contentDefinition.empty_en }}</p> }
+              @if (relatedRows(item, contentDefinition).length > 0) { <ul>@for (related of relatedRows(item, contentDefinition); track valueOf(related, 'id') ?? $index) { <li>{{ valueOf(related, contentDefinition.display_field) }}</li> }</ul> }
+            }
+            @if (contentDefinition.type === 'fields') { <dl class="card-fields">@for (field of (contentDefinition.fields || []); track field.field) { <div><dt>{{ labelOf(field) }}</dt><dd>{{ valueOf(item, field.field) ?? '—' }}</dd></div> }</dl> }
+            @if (cardDefinition.description?.field) { <p>{{ valueOf(item, cardDefinition.description.field) }}</p> }
+          </mat-card-content>
+          @if (actions.length > 0) { <mat-card-actions align="end">@for (action of actions; track action.name) { <button mat-button type="button" (click)="runAction(action, item)">{{ labelFor(action) }}</button> }</mat-card-actions> }
+        </mat-card>
+      }
+    </div>
+  }
+</section>

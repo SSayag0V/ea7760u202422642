@@ -1,0 +1,59 @@
+<h1 class="title">{{ (isEdit ? 'charging-station.edit-title' : 'charging-station.new-title') | translate }}</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
+      <mat-form-field>
+        <mat-label>{{ 'charging-station.stationName' | translate }}</mat-label>
+        <input matInput type="text" formControlName="stationName" required />
+        @if (form.get('stationName')!.touched && form.get('stationName')!.hasError('required')) {
+          <mat-error>{{ 'charging-station.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'charging-station.vehicleType' | translate }}</mat-label>
+        <input matInput type="text" formControlName="vehicleType" required />
+        @if (form.get('vehicleType')!.touched && form.get('vehicleType')!.hasError('required')) {
+          <mat-error>{{ 'charging-station.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'charging-station.maxGridKwCapacity' | translate }}</mat-label>
+        <input matInput type="number" formControlName="maxGridKwCapacity" required />
+        @if (form.get('maxGridKwCapacity')!.touched && form.get('maxGridKwCapacity')!.hasError('required')) {
+          <mat-error>{{ 'charging-station.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'charging-station.stallsAvailable' | translate }}</mat-label>
+        <input matInput type="number" formControlName="stallsAvailable" required />
+        @if (form.get('stallsAvailable')!.touched && form.get('stallsAvailable')!.hasError('required')) {
+          <mat-error>{{ 'charging-station.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'charging-station.isActive' | translate }}</mat-label>
+        <input matInput type="text" formControlName="isActive" required />
+        @if (form.get('isActive')!.touched && form.get('isActive')!.hasError('required')) {
+          <mat-error>{{ 'charging-station.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+
+  <mat-form-field>
+        <mat-label>{{ 'charging-station.locationCoordinates' | translate }}</mat-label>
+        <input matInput type="text" formControlName="locationCoordinates" required />
+        @if (form.get('locationCoordinates')!.touched && form.get('locationCoordinates')!.hasError('required')) {
+          <mat-error>{{ 'charging-station.error.required' | translate }}</mat-error>
+        }
+      </mat-form-field>
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          {{ (isEdit ? 'charging-station.update' : 'charging-station.create') | translate }}
+        </button>
+        <button mat-button type="button" (click)="cancel()">
+          {{ 'charging-station.cancel' | translate }}
+        </button>
+      </div>
+    </form>
+    

@@ -1,0 +1,100 @@
+{
+  "option": {
+    "home": "Inicio",
+    "charging-stations": "Estaciones de Carga",
+    "search-games": "Search Games"
+  },
+  "home": {
+    "title": "Inicio",
+    "content": "Bienvenido a ea7760u202422642."
+  },
+  "about": {
+    "title": "Acerca de",
+    "content": "Informaci\u00f3n de la aplicaci\u00f3n y su autor: ea7760u202422642.",
+    "nrc": "NRC",
+    "code": "C\u00f3digo",
+    "author": "Autor/a"
+  },
+  "common": {
+    "confirm-delete": "\u00bfSeguro que deseas eliminar este elemento?",
+    "loading": "Cargando\u2026",
+    "external-error": "No se pudieron cargar los datos de la API externa."
+  },
+  "page-not-found": {
+    "title": "P\u00e1gina no encontrada",
+    "content": "La ruta <strong>{{ invalid_path }}</strong> no es v\u00e1lida.",
+    "go-home": "Ir a Inicio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "powered-by": "Desarrollado con",
+    "and": "y"
+  },
+  "charging-station": {
+    "list-title": "ChargingStation",
+    "new-title": "Nuevo/a ChargingStation",
+    "edit-title": "Editar ChargingStation",
+    "create": "Crear",
+    "update": "Actualizar",
+    "cancel": "Cancelar",
+    "new": "Nuevo",
+    "add-new": "Agregar chargingstation",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "actions": "Acciones",
+    "empty": "Vac\u00edo",
+    "id": "ID",
+    "stationName": "Station Name",
+    "vehicleType": "Vehicle Type",
+    "maxGridKwCapacity": "Max Grid Kw Capacity",
+    "stallsAvailable": "Stalls Available",
+    "isActive": "Is Active",
+    "locationCoordinates": "Location Coordinates",
+    "error": {
+      "required": "ChargingStation es requerido",
+      "range": "El valor est\u00e1 fuera del rango permitido"
+    }
+  },
+  "vehicle-charge": {
+    "list-title": "VehicleCharge",
+    "new-title": "Nuevo/a VehicleCharge",
+    "edit-title": "Editar VehicleCharge",
+    "create": "Crear",
+    "update": "Actualizar",
+    "cancel": "Cancelar",
+    "new": "Nuevo",
+    "add-new": "Agregar vehiclecharge",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "actions": "Acciones",
+    "empty": "Vac\u00edo",
+    "id": "ID",
+    "stationId": "Station Id",
+    "vehicleType": "Vehicle Type",
+    "makeId": "Make Id",
+    "makeName": "Make Name",
+    "kwDemand": "Kw Demand",
+    "chargingPortType": "Charging Port Type",
+    "isFastCharge": "Is Fast Charge",
+    "registeredAt": "Fecha de registro",
+    "error": {
+      "required": "VehicleCharge es requerido",
+      "range": "El valor est\u00e1 fuera del rango permitido"
+    }
+  },
+  "external-api": {
+    "games-service": {
+      "search-games": {
+        "title": "Search Games",
+        "empty": "No se encontraron registros.",
+        "loading-error": "No se pudieron cargar los datos de la API externa.",
+        "fields": {
+          "count": "Count",
+          "message": "Message",
+          "search-criteria": "Search Criteria",
+          "results": "Results"
+        }
+      }
+    }
+  }
+}
