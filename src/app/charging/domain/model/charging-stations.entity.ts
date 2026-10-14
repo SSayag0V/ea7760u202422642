@@ -1,5 +1,7 @@
 import {Coordinates} from './coordinates';
 
+
+
 export class ChargingStations {
   #id: string;
   #stationName: string;

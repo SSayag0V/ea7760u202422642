@@ -9,7 +9,7 @@ export class VehicleCharges {
   isFastCharge: boolean;
   registeredAt: Date;
 
-  constructor(){
+  constructor() {
     this.#id = 0;
     this.#stationId = '';
     this.#vehicleType = '';

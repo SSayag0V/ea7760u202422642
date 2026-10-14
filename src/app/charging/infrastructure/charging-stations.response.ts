@@ -1,4 +1,6 @@
-export interface ChargingStationsResponse{
+import {BaseResponse} from '../../shared/infrastructure/base-response';
+
+export interface ChargingStationsResource{
   id: string;
   stationName: string;
   vehicleType: string;
@@ -9,4 +11,8 @@ export interface ChargingStationsResponse{
     lat: number;
     lng: number;
   }
+}
+
+export interface ChargingStationsResponse extends BaseResponse{
+  chargingStations: ChargingStationsResource[];
 }
